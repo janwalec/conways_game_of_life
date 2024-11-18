@@ -14,7 +14,6 @@ class PygameDisplay:
 
         pygame.init()
         self.screen = pygame.display.set_mode((win_size, win_size))
-        clock = pygame.time.Clock()
 
     def draw_board(self):
         s = self.board.size
