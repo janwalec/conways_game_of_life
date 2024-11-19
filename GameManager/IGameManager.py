@@ -35,5 +35,5 @@ class IGameManager:
     def do_moves(self):
         raise Exception("Not implemented")
 
-    def process_field(self, field):
+    def process_field(self, args):
         raise Exception("Not implemented")

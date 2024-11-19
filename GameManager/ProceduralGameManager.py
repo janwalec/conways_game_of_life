@@ -8,7 +8,8 @@ class ProceduralGameManager(IGameManager):
 
 
 
-    def process_field(self, field):
+    def process_field(self, args):
+        field = args
         i = field.index
         alive = field.alive
         alive_neighbours_num = self.count_neighbours(field)

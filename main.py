@@ -1,5 +1,6 @@
 import cProfile
 import pstats
+import random
 
 from ConsoleDisplayer import print_board
 from GameManager.IGameManager import IGameManager
@@ -11,12 +12,14 @@ from PygameDisplay import PygameDisplay
 import time
 
 def init_gm():
+        #random.seed(42)
+
         s = 200
         chance = 0.2
         n = Neighbouring2D(s)
-        # n = NeighbouringCylinder(s)
+        #n = NeighbouringCylinder(s)
 
-        gm = ProceduralGameManager(s, n, chance)
+        gm = MultiProcessingGameManager(s, n, chance)
 
         # cProfile.run("test_time(gm, 3)", "my_func_stats")
         # p = pstats.Stats("my_func_stats")
@@ -36,7 +39,8 @@ def test_time(gm: IGameManager, num_of_iter):
 if __name__ == "__main__":
     gm = init_gm()
     gm.set_life()
-    #test_time(gm, 50)
+    #test_time(gm, 10)
+
     pd = PygameDisplay(1000, gm)
     pd.run()
 
