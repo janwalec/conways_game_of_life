@@ -12,7 +12,7 @@ class ProceduralGameManager(IGameManager):
         field = args
         i = field.index
         alive = field.alive
-        alive_neighbours_num = self.count_neighbours(field)
+        alive_neighbours_num = field.number_of_alive_neighbours
 
         kill_this = []
         spawn_this = []
@@ -41,8 +41,6 @@ class ProceduralGameManager(IGameManager):
 
         for i in range(self.size ** 2):
             field = self.board.fields[i]
-            alive = field.alive
-            cells_around = self.count_neighbours(field)
 
             kill_this, spawn_this = self.process_field(field)
 
@@ -50,7 +48,7 @@ class ProceduralGameManager(IGameManager):
             to_spawn.extend(spawn_this)
 
         for k in to_kill:
-            self.board.fields[k].set_alive(0)
+            self.board.set_field_alive(k, 0)
         for s in to_spawn:
-            self.board.fields[s].set_alive(1)
+            self.board.set_field_alive(s, 1)
 

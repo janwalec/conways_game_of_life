@@ -14,16 +14,14 @@ import time
 def init_gm():
         #random.seed(42)
 
-        s = 200
+        s = 500
         chance = 0.2
         n = Neighbouring2D(s)
         #n = NeighbouringCylinder(s)
 
-        gm = MultiProcessingGameManager(s, n, chance)
+        gm = ProceduralGameManager(s, n, chance)
 
-        # cProfile.run("test_time(gm, 3)", "my_func_stats")
-        # p = pstats.Stats("my_func_stats")
-        # p.sort_stats("cumulative").print_stats()
+
         return gm
 
 
@@ -39,8 +37,11 @@ def test_time(gm: IGameManager, num_of_iter):
 if __name__ == "__main__":
     gm = init_gm()
     gm.set_life()
-    #test_time(gm, 10)
 
+    #test_time(gm, 20)
+    #cProfile.run("test_time(gm, 30)", "my_func_stats")
+    #p = pstats.Stats("my_func_stats")
+    #p.sort_stats("cumulative").print_stats()
     pd = PygameDisplay(1000, gm)
     pd.run()
 

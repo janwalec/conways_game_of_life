@@ -18,6 +18,7 @@ class MultiProcessingGameManager(IGameManager):
         self.executor = ThreadPoolExecutor(max_workers=num_of_workers)
 
 
+
     def process_chunk(self, chunk):
         to_kill = []
         to_spawn = []
@@ -33,7 +34,7 @@ class MultiProcessingGameManager(IGameManager):
 
     def process_field(self, args):
         field = args
-        alive_neighbours_num = self.count_neighbours(field)
+        alive_neighbours_num = field.number_of_alive_neighbours
         i = field.index
 
         kill_this = []
@@ -62,9 +63,11 @@ class MultiProcessingGameManager(IGameManager):
 
         for k, s in res:
             for kill_pos in k:
-                self.board.fields[kill_pos].set_alive(0)
+                self.board.set_field_alive(kill_pos, 0)
+                #self.board.fields[kill_pos].set_alive(0)
             for spawn_pos in s:
-                self.board.fields[spawn_pos].set_alive(1)
+                #self.board.fields[spawn_pos].set_alive(1)
+                self.board.set_field_alive(spawn_pos, 1)
 
     def __getstate__(self):
         self_dict = self.__dict__.copy()

@@ -25,12 +25,7 @@ class IGameManager:
         spawn = [3]
         return die, spawn
 
-    def count_neighbours(self, field: Field):
-        cntr = 0
-        for idx in field.neighbours:
-            if self.board.fields[idx].alive:
-                cntr += 1
-        return cntr
+
 
     def do_moves(self):
         raise Exception("Not implemented")

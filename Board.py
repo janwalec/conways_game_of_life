@@ -26,6 +26,22 @@ class Board:
         for i in range(self.size ** 2):
             r = randint(0, 100)
             if r < upper_bound:
-                self.fields[i].set_alive(1)
+                self.set_field_alive(i, 1)
             else:
-                self.fields[i].set_alive(0)
+                self.set_field_alive(i, 0)
+
+    def set_field_alive(self, index, alive):
+        field = self.fields[index]
+
+        was_alive = field.alive
+        field.set_alive(alive)
+
+        if not was_alive and alive:
+            for neighbour_index in field.neighbours:
+                self.fields[neighbour_index].number_of_alive_neighbours += 1
+        elif was_alive and not alive:
+            for neighbour_index in field.neighbours:
+                self.fields[neighbour_index].number_of_alive_neighbours -= 1
+
+
+
