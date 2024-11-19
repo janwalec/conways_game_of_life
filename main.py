@@ -11,16 +11,13 @@ from Neighbouring.NeighbouringCylinder import NeighbouringCylinder
 from PygameDisplay import PygameDisplay
 import time
 
-def init_gm():
+def init_gm(s, chance):
         #random.seed(42)
 
-        s = 500
-        chance = 0.2
         n = Neighbouring2D(s)
         #n = NeighbouringCylinder(s)
 
-        gm = ProceduralGameManager(s, n, chance)
-
+        gm = MultiProcessingGameManager(s, n, chance)
 
         return gm
 
@@ -35,8 +32,11 @@ def test_time(gm: IGameManager, num_of_iter):
     print(round(time.time() - time_start, 3))
 
 if __name__ == "__main__":
-    gm = init_gm()
+    s = 500
+    ch = 0.2
+    gm = init_gm(s, ch)
     gm.set_life()
+    #gm.board.set_field_alive(s ** 2 // 2 + s//2, 1)
 
     #test_time(gm, 20)
     #cProfile.run("test_time(gm, 30)", "my_func_stats")

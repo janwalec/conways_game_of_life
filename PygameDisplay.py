@@ -48,7 +48,7 @@ class PygameDisplay:
                     col = int(mouse_x // self.square_size)
                     row = int(mouse_y // self.square_size)
                     field = self.board.fields[row * self.board_size + col]
-                    field.set_alive(not field.alive)
+                    self.board.set_field_alive(field.index, not field.alive)
 
 
 
