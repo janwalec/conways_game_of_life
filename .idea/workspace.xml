@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02ffbdd5-eb43-44e4-b31a-2c390720abbd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManager/IGameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager/IGameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManager/MultiProcessingGameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager/MultiProcessingGameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameManager/ProceduralGameManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameManager/ProceduralGameManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xGameManager.py" beforeDir="false" />
-    </list>
+    <list default="true" id="02ffbdd5-eb43-44e4-b31a-2c390720abbd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +90,7 @@
       <workItem from="1731967169762" duration="828000" />
       <workItem from="1732030298966" duration="5891000" />
       <workItem from="1732036200688" duration="2447000" />
-      <workItem from="1732047420875" duration="2990000" />
+      <workItem from="1732047420875" duration="3066000" />
     </task>
     <servers />
   </component>

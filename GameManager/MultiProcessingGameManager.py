@@ -11,7 +11,7 @@ from Neighbouring.INeighbouring import INeighbouring
 class MultiProcessingGameManager(IGameManager):
     def __init__(self, size, neighbouring: INeighbouring, chance):
         super().__init__(size, neighbouring, chance)
-        num_of_workers = max_workers=os.cpu_count()
+        num_of_workers = os.cpu_count()
         self.chunk_size = size ** 2 // num_of_workers
 
         self.chunks = self.split_into_chunks(self.chunk_size)
