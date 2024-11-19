@@ -43,7 +43,7 @@ class ProceduralGameManager(IGameManager):
             alive = field.alive
             cells_around = self.count_neighbours(field)
 
-            kill_this, spawn_this = self.process_field((i, alive, cells_around))
+            kill_this, spawn_this = self.process_field(field)
 
             to_kill.extend(kill_this)
             to_spawn.extend(spawn_this)

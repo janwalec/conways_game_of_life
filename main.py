@@ -16,7 +16,7 @@ def init_gm():
         n = Neighbouring2D(s)
         # n = NeighbouringCylinder(s)
 
-        gm = MultiProcessingGameManager(s, n, chance)
+        gm = ProceduralGameManager(s, n, chance)
 
         # cProfile.run("test_time(gm, 3)", "my_func_stats")
         # p = pstats.Stats("my_func_stats")
@@ -36,8 +36,9 @@ def test_time(gm: IGameManager, num_of_iter):
 if __name__ == "__main__":
     gm = init_gm()
     gm.set_life()
-    gm.do_moves()
-    gm.close_pool()
+    #test_time(gm, 50)
+    pd = PygameDisplay(1000, gm)
+    pd.run()
 
 
 
