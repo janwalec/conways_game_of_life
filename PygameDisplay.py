@@ -27,9 +27,6 @@ class PygameDisplay:
                 y = row * self.square_size
                 pygame.draw.rect(self.screen, c, (x, y, self.square_size, self.square_size))
 
-
-
-
     def run(self):
         paused = True
         clock = pygame.time.Clock()
@@ -44,7 +41,7 @@ class PygameDisplay:
                         paused = not paused
                     if event.key == pygame.K_k:
                         if paused:
-                            self.gm.do_move()
+                            self.gm.do_moves()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_x, mouse_y = event.pos
@@ -56,9 +53,9 @@ class PygameDisplay:
 
 
             if not paused:
-                self.gm.do_move()
+                self.gm.do_moves()
 
-            pygame.time.delay(50)
+            #pygame.time.delay(50)
             clock.tick(60)
 
             self.screen.fill((0, 0, 0))
